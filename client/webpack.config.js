@@ -24,21 +24,18 @@ plugins: [
   }),
   new WebpackPwaManifest({
 
-    name: 'PWA-text-editor',
+    filename: 'manifest.json',
+    name: 'Just another text editor',
     short_name: 'JATE',
     description: 'Text editor progressive web app',
-    background_color: '#ffffff',
-    crossorigin: 'use-credentials',
+    background_color: '#225ca3',
+    fingerprints: false,
     icons: [
       {
-        src: path.resolve('src/assets/icon.png'),
-        sizes: [96, 128, 192, 256, 384, 512]
+        src: path.resolve('src/images/logo.png'),
+        sizes: [96, 128, 192, 256, 384, 512], // different sizes
+        destination: path.join('assets', 'icons'),
       },
-    {
-      src: path.resolve('src/assets/maskable-icon.png'),
-      size: '1024x1024',
-      purpose: 'maskable'
-    }
     ]
   }),
 ],
@@ -60,5 +57,4 @@ module: {
       },
     },
   ],
-},
 };
