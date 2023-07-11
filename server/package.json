@@ -13,6 +13,7 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "webpack-dev-server": "^4.15.1"
   }
 }

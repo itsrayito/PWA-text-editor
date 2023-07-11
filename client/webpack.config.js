@@ -23,7 +23,7 @@ module.exports = () => {
     plugins: [
       new HtmlWebpackPlugin({
         template: './index.html',
-        title: 'Webpack Plugin',
+        title: 'JATE',
       }),
 
   new InjectManifest({
@@ -31,13 +31,13 @@ module.exports = () => {
     swDest: 'src-sw.js',
   }),
 
+  // this will create a manifest.json file.
   new WebpackPwaManifest({
-
     fingerprints: false,
     inject: true,
-    name: 'Just another text editor',
+    name: 'Just Another Text Editor',
     short_name: 'J.A.T.E.',
-    description: 'Text editor progressive web app',
+    description: 'J.A.T.E. Text Editor',
     background_color: '#ffffff',
     start_url: '/',
     publicPath: '/',
@@ -53,11 +53,11 @@ module.exports = () => {
 ],
 
 // this is the CSS loaders and babel section
-  modules: {
+  module: {
   rules: [
     {
       test: /\.css$/i,
-      use: ['style-loader', "css-loader"]
+      use: ['style-loader', 'css-loader'],
     },
     {
       test: /\.m?js$/,
