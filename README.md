@@ -1,14 +1,14 @@
 # PWA-text-editor
 
-[Description](#description)
-[Installation](#installation)
-[Usage](#usage)
-[Screenshot](#screenshot)
-[Contributions](#contributions)
-[License](#license)
-[Questions](#questions)
-[Credits](#credits)
-[Heroku-Link](#heroku-link)
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Screenshot](#screenshot)
+- [Contributions](#contributions)
+- [License](#license)
+- [Questions](#questions)
+- [Credits](#credits)
+- [Heroku-Link](#heroku-link)
 
 ## Description
 A text editor that runs in the browser that will be a single-page application and will feature a number of data persistence techniques that serve as redundancy in case one of the options is not supported by the browser. The application will also function offline.
