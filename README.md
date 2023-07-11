@@ -5,7 +5,6 @@
 - [Usage](#usage)
 - [Screenshot](#screenshot)
 - [Contributions](#contributions)
-- [License](#license)
 - [Questions](#questions)
 - [Credits](#credits)
 - [Heroku-Link](#heroku-link)
@@ -14,18 +13,20 @@
 A text editor that runs in the browser that will be a single-page application and will feature a number of data persistence techniques that serve as redundancy in case one of the options is not supported by the browser. The application will also function offline.
 
 ## Installation
-
+There are two ways a user can use this application.<br>
+The first way is by cloning the repository on to their local machine of choice.<br>
+The user will then head on to their code editor of choice and open the terminal and type the following `npm i` to install all of the dependencies. <br>
+Once this step is done, the user will then type `npm run start` to initialize and build the server. The user will then be able to open the application into a web browser and type `http://localhost:3000/` in to the address bar. <br>
+The other way a user can use this application is by going to the following link `https://lovely-jate-2fa379ab8708.herokuapp.com/` and download the application into their desktop in order for the user to use it locally.
 
 ## Usage
 The user can use the text editor application thru the browser or install it as an app. The user will be able to write code snippets or write notes that will be able to get saved when used offline.
 
 ## Screenshot
+![Alt text](<images/Screenshot 2023-07-11 at 6.28.55 AM.png>)<br>
 
 ## Contributions
 At this moment, there is no need for any contributions for this application.
-
-## License 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/license/MIT) <br><br>
 
 ## Questions
 You can [email](rayito.aguirre94@gmail.com) me if there is any questions or comments that arise from this application.<br>
