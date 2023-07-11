@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 const path = require('path');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 const { InjectManifest } = require('workbox-webpack-plugin');
 
 // this is the workbox plugins for a service worker and manifest file
@@ -12,6 +13,9 @@ module.exports = () => {
       main: './src/js/index.js',
       install: './src/js/install.js'
     },
+    devServer: {
+      hot: 'only',
+    },
     output: {
       filename: '[name].bundle.js',
       path: path.resolve(__dirname, 'dist'),
@@ -19,39 +23,32 @@ module.exports = () => {
     plugins: [
       new HtmlWebpackPlugin({
         template: './index.html',
-        title: 'Just another text editor',
+        title: 'Webpack Plugin',
       }),
 
   new InjectManifest({
     swSrc: './src-sw.js',
     swDest: 'src-sw.js',
   }),
+
   new WebpackPwaManifest({
 
-    filename: 'manifest.json',
     fingerprints: false,
     inject: true,
     name: 'Just another text editor',
     short_name: 'J.A.T.E.',
     description: 'Text editor progressive web app',
-    background_color: '#225ca3',
-    start_url: './',
-    publicPath: './',
+    background_color: '#ffffff',
+    start_url: '/',
+    publicPath: '/',
+    crossorigin: 'use-credentials',
     icons: [
       {
         src: path.resolve('src/images/logo.png'),
         sizes: [96, 128, 192, 256, 384, 512], // different sizes
         destination: path.join('assets', 'icons'),
       },
-      // favicon icon section
-      {
-        src: path.resolve('favicon.ico'),
-        sizes: [48],
-        destination: path.join('assets', 'icons'),
-      },
-
-    ]
-
+    ],
   }),
 ],
 
@@ -64,7 +61,7 @@ module.exports = () => {
     },
     {
       test: /\.m?js$/,
-      exclude: /(node_modules)/,
+      exclude: /node_modules/,
       use: {
         loader: 'babel-loader',
         options: {

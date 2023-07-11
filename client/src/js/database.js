@@ -15,13 +15,13 @@ const initdb = async () =>
 // this will add content to the index db
 export const putDB = async (content) => {
 
-    console.log('Post to the database');
+    console.log('PUT to the database');
     const jateDb = await openDB('jate', 1 );
     const tx = jateDb.transaction('jate', 'readwrite');
     const store = tx.objectStore('jate');
-    const request = store.add({ value: content });
+    const request = store.put({ id: 1, value: content });
     const result = await request;
-    console.log(' data saved to the database', result);
+    console.log(' data saved to the database', result.value);
 };
 
 // this will get all the content from the database
@@ -33,8 +33,13 @@ export const getDb = async () => {
     const store = tx.objectStore('jate');
     const request = store.getAll();
     const result = await request;
-    console.log('result.value', result);
-    return result;
+
+    if (result) {
+      console.log('data retrieved from the database', result.value);
+    } else {
+      console.log('data not found in the database');
+    }
+    return result?.value;
 };
 
 initdb();
